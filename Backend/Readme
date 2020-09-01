@@ -1,0 +1,31 @@
+This contains the code for the Backend Assignment for namo. The Payment methods supported are credit card and debit card.
+
+The post request can be made using : localhost:8080/payment
+The body for the post request contains-->
+{
+"amount": "100",
+"currency": "Rs",
+"type": "",
+"card": {
+"number": "4111111111111111",
+"expirationMonth": "12",
+"expirationYear": "2020",
+"cvv": "111"
+}
+}
+
+
+Please also note that the api contains basic level checks for the card details and the other details so please make sure they 
+are correct .If not then proper error handling has also been done in those cases.
+Also the database used is H2 . You can directly see the database contents in the url
+
+http://localhost:8080/h2-console/
+
+Also for the login credentials the username is "sa" and password is "".PFA the screenshot for your reference.
+
+Also to implement bank side work an api for the bank has been deployed which just gives us the basic succeess ,failure responses
+with transactionId and authorization_code.
+Also the timeout as not specified in question is given as 15secs.
+
+To run it just download it and run on any java IDE like Intellij or eclipse .
+

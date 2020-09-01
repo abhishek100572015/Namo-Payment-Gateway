@@ -8,6 +8,8 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * The model in which data will get saved to the SQL database.
  * @author Abhishek
@@ -23,12 +25,16 @@ public class TransactionDetails {
 	private String bankTransactionId;
 	private String authorization_code;
 	private String status;
+	
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Timestamp timeOrderCompleted;
 
 	private String amount;
 	private String paymentMode;
 	private String paymentId;
 	private String currency;
+	
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Timestamp timeOrderReceived;
 	
 	public String getTransactionId() {
